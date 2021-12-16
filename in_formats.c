@@ -54,6 +54,12 @@ int main(int argc, char **argv)
 		printf("Blob format   %d = %d\n", i, blob_formats[i]);
 		for (int j = 0; j < fmt_mod_blob->count_modifiers; j++) {
 			struct drm_format_modifier *mod = &blob_modifiers[j];
+
+			if ((i < mod->offset) || (i > mod->offset + 63))
+				continue;
+			if (!(mod->formats & (1 << (i - mod->offset))))
+				continue;
+
 			printf("Blob modifier %d = %lld\n", j, mod->modifier);
 		}
 	}
