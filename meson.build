@@ -17,3 +17,8 @@ executable('in_formats',
     'in_formats.c',
     dependencies: [dep_libdrm]
 )
+
+executable('plane-alpha-prop',
+    'plane-alpha-prop.c',
+    dependencies: [dep_libdrm]
+)
