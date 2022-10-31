@@ -22,3 +22,8 @@ executable('plane-alpha-prop',
     'plane-alpha-prop.c',
     dependencies: [dep_libdrm]
 )
+
+executable('cursor-size',
+    'cursor-size.c',
+    dependencies: [dep_libdrm]
+)
