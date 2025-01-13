@@ -13,6 +13,11 @@ cflags = [
 add_project_arguments(cflags, language: 'c')
 add_project_arguments(cflags, language: 'cpp')
 
+executable('cursor-size',
+    'cursor-size.c',
+    dependencies: [dep_libdrm]
+)
+
 executable('in_formats',
     'in_formats.c',
     dependencies: [dep_libdrm]
@@ -20,10 +25,5 @@ executable('in_formats',
 
 executable('plane-alpha-prop',
     'plane-alpha-prop.c',
-    dependencies: [dep_libdrm]
-)
-
-executable('cursor-size',
-    'cursor-size.c',
     dependencies: [dep_libdrm]
 )
