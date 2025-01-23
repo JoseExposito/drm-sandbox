@@ -10,6 +10,10 @@ indent_style = tab
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+[*.json]
+indent_size = 2
+indent_style = space
+
 [{meson.build,meson_options.txt}]
 indent_size = 4
 indent_style = space
