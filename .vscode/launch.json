@@ -1,0 +1,48 @@
+{
+  "configurations": [
+    {
+      "name": "(gdb) Attach",
+      "type": "cppdbg",
+      "request": "attach",
+      "program": "${workspaceFolder}/builddir/in_formats",
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          },
+          {
+            "description": "Set Disassembly Flavor to Intel",
+            "text": "-gdb-set disassembly-flavor intel",
+            "ignoreFailures": true
+          }
+      ]
+    },
+    {
+      "name": "(gdb) in_formats",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/builddir/in_formats",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build debug meson"
+    }
+  ]
+}
