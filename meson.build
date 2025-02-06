@@ -13,6 +13,11 @@ cflags = [
 add_project_arguments(cflags, language: 'c')
 add_project_arguments(cflags, language: 'cpp')
 
+executable('01-rpi-version-ioctl',
+    '01-rpi-version-ioctl.c',
+    dependencies: [dep_libdrm]
+)
+
 executable('cursor-size',
     'cursor-size.c',
     dependencies: [dep_libdrm]
